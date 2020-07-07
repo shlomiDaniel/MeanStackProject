@@ -1,0 +1,34 @@
+<p>gpu works!</p>
+
+
+<div class="d-inline-flex p-2" *ngFor="let cpu of cpus | async">
+
+<!--  <p>{{cpu.name }}</p>-->
+  <div class="card" style="width: 18rem;">
+    <!--    <img src="{{gpu.imgPathCompanyLogo}}" >-->
+    <img class="card-img-top" src="{{cpu.imgPath}}" >
+
+    <img style="margin-top: 10px" width="80px" height="28px" src="{{cpu.imgPathCompanyLogo}}">
+
+
+
+    <div id="start"></div>
+
+
+
+    <div class="card-body">
+      <h5 class="card-title">{{cpu.name}}</h5>
+
+      <div style="display: inline;margin-left: 5px" *ngFor="let number of [0,1,2,3,4] "  >
+        <p style="display: inline" *ngIf="number<cpu.numOfStars">
+          <i style="color: #fbb535" class="fa fa-star" aria-hidden="true"></i></p>
+      </div >
+
+
+      <p class="card-text">{{cpu.description}}</p>
+      <h5 class="card-title">{{cpu.price}}</h5>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+

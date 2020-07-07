@@ -1,0 +1,52 @@
+
+<mat-card>
+<form (submit)="onAddGpu(gpuForm)" #gpuForm="ngForm">
+
+
+    <mat-form-field  ><br>
+    <input placeholder="Enter Name:"  matInput type="text" ngModel  name="name" required #name="ngModel"/>
+      <mat-error style="color: blueviolet" *ngIf="name.invalid">Please Enter a Gpu name</mat-error>
+    </mat-form-field><br>
+  <mat-form-field  ><br>
+    <input placeholder="Enter company:" matInput type="text" ngModel  name="company" required #company="ngModel"/>
+    <mat-error style="color: blueviolet" *ngIf="company.invalid">Please Enter a Gpu company</mat-error>
+  </mat-form-field  ><br>
+  <mat-form-field  ><br>
+    <input placeholder="Enter price:"  matInput type="text" ngModel  name="price" required #price="ngModel"/>
+    <mat-error style="color: blueviolet" *ngIf="price.invalid">Please Enter a Gpu price </mat-error>
+  </mat-form-field  ><br>
+    <mat-form-field><br>
+    <input placeholder="Enter imgPath:"  matInput type="text" ngModel  name="imgPath" required #imgPath="ngModel"/>
+      <mat-error style="color: blueviolet" *ngIf="imgPath.invalid">Please Enter a Gpu imgPath</mat-error>
+  </mat-form-field  ><br>
+  <mat-form-field><br>
+    <input placeholder="Enter description:"  matInput type="text" ngModel  name="description" required #description="ngModel"/>
+    <mat-error style="color: blueviolet" *ngIf="description.invalid">Please Enter a Gpu description</mat-error>
+  </mat-form-field><br>
+  <mat-form-field><br>
+    <input placeholder="Enter numOfStars:"  matInput type="text" ngModel  name="numOfStars" required #numOfStars="ngModel"/>
+    <mat-error style="color: blueviolet" *ngIf="numOfStars.invalid">Please Enter a Gpu numOfStars</mat-error>
+  </mat-form-field><br>
+  <mat-form-field  ><br>
+
+    <input placeholder="Enter imgPathCompanyLogo:"  matInput type="text" ngModel  name="imgPathCompanyLogo" required #imgPathCompanyLogo="ngModel"/>
+    <mat-error style="color: blueviolet" *ngIf="imgPathCompanyLogo.invalid">Please Enter a Gpu imgPathCompanyLogo</mat-error>
+  </mat-form-field><br><br>
+
+
+
+
+  <mat-form-field >
+
+    <textarea style="margin-top: 10px"  matInput ngModel  name="content" rows="4"></textarea>
+
+
+  </mat-form-field>
+  <button mat-raised-button
+          color="primary"
+          type="submit" >Add Gpu</button>
+
+</form>
+
+</mat-card>
+

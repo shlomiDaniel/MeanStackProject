@@ -1,0 +1,36 @@
+<div style="margin-top: 10px" ></div>
+<mat-accordion multi="true" *ngIf="gpus.length>0">
+  <div style="margin-top: 10px" ></div>
+  <mat-expansion-panel class="inputFiled" *ngFor="let gpu of gpus" >
+
+      <mat-expansion-panel-header>
+
+        {{gpu.name}}
+
+      </mat-expansion-panel-header>
+
+
+    <p>name:</p>
+    {{gpu.name}}
+    <p>company:</p>
+    {{gpu.company}}
+    <p>price:</p>
+    {{gpu.price}}
+    <p>imgPath:</p>
+    {{gpu.imgPath}}
+    <p>description:</p>
+    {{gpu.description}}
+    <p>numOfStars:</p>
+    {{gpu.numOfStars}}
+    <p>imgPathCompanyLogo:</p>
+    {{gpu.imgPathCompanyLogo}}
+    <mat-action-row >
+     <button mat-button color="primary">Edit</button>
+      <button color="warn" mat-button>Delete</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<p  class="mat-body-strong info-text" *ngIf="gpus.length<1">No Gpus Added Yet!</p>
+<div style="margin-top: 500px">.</div>

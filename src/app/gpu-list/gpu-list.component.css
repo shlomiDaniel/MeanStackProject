@@ -1,0 +1,19 @@
+:host {
+  /*display: block;*/
+  margin-top: 1rem;
+
+}
+.info-text{
+  text-align: center;
+}
+
+.inputFiled{
+
+  margin-top: 2rem;
+  width: 80%;
+  margin: auto;
+}
+p{
+  font-weight: bold;
+  color: mediumvioletred;
+}
