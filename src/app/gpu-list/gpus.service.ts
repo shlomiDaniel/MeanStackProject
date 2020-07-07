@@ -4,19 +4,25 @@ import {Subject} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { ThrowStmt } from '@angular/compiler';
-// @Injectable({providedIn: 'root'})
+ @Injectable({providedIn: 'root'})
 export  class GpusService {
-  // constructor(private http: HttpClient){}
- 
-  private gpus: Gpu [] = [];
+    constructor(public http: HttpClient){}
+  private gpus;
+ // private gpus: Gpu [] = [];
   private gpusUpdated = new Subject<Gpu[]>();
   // tslint:disable-next-line:typedef
   getGpus(){
-     return [...this.gpus];
-    // this.http.get<{gpus:Gpu[]}>('http://localhost:4500/gpu').subscribe((gpuData)=>{
-    //  this.gpus = gpuData.gpus;
-    //  this.gpusUpdated.next([...this.gpus]);
-   // });
+    //return [...this.gpus];
+    // this.http.get<{gpus: any[]}>('http://localhost:4500/gpu').subscribe((gpuData)=>{
+     this.http.get('http://localhost:4500/gpu').subscribe((gpuData)=>{
+      this.gpus = gpuData;
+     // this.gpus = [...this.gpus];
+     console.log(gpuData);
+       this.gpusUpdated.next([...this.gpus]);
+       //this.gpusUpdated.([...this.gpus]);
+     // console.log(this.gpus);
+     
+    });
   }
   // tslint:disable-next-line:typedef
   addGpu(name: string, company: string, price: string, imgPath: string, description: string, imgPathCompanyLogo: string, numOfStars: string){

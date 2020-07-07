@@ -22,7 +22,7 @@ export class GpuListComponent implements OnInit, OnDestroy {
     }
 
   ngOnInit(): void {
-    this.gpus = this.gpusService.getGpus();
+     this.gpusService.getGpus();
     this.gpusSub = this.gpusService.getPostUpdateListner().subscribe((gpus: Gpu[]) => {
       this.gpus = gpus;
     });
